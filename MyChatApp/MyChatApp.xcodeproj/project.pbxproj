@@ -15,6 +15,10 @@
 		507EE3EC23F30A02007D343B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507EE3EA23F30A02007D343B /* LaunchScreen.storyboard */; };
 		507EE3F723F30A03007D343B /* MyChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507EE3F623F30A03007D343B /* MyChatAppTests.swift */; };
 		507EE40223F30A03007D343B /* MyChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507EE40123F30A03007D343B /* MyChatAppUITests.swift */; };
+		5097C36523F30C4F0045E8BC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36423F30C4F0045E8BC /* SignUpViewController.swift */; };
+		5097C36723F30C8C0045E8BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36623F30C8C0045E8BC /* LoginViewController.swift */; };
+		5097C36923F30CA20045E8BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36823F30CA20045E8BC /* HomeViewController.swift */; };
+		5097C36D23F30D740045E8BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36C23F30D740045E8BC /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		507EE3FD23F30A03007D343B /* MyChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		507EE40123F30A03007D343B /* MyChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatAppUITests.swift; sourceTree = "<group>"; };
 		507EE40323F30A03007D343B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5097C36423F30C4F0045E8BC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5097C36623F30C8C0045E8BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5097C36823F30CA20045E8BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5097C36C23F30D740045E8BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,8 @@
 		507EE3DE23F30A02007D343B /* MyChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				5097C36B23F30D2C0045E8BC /* Views */,
+				5097C36A23F30CA60045E8BC /* ViewControllers */,
 				507EE3DF23F30A02007D343B /* AppDelegate.swift */,
 				507EE3E123F30A02007D343B /* SceneDelegate.swift */,
 				507EE3E323F30A02007D343B /* ViewController.swift */,
@@ -126,6 +136,24 @@
 				507EE40323F30A03007D343B /* Info.plist */,
 			);
 			path = MyChatAppUITests;
+			sourceTree = "<group>";
+		};
+		5097C36A23F30CA60045E8BC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5097C36423F30C4F0045E8BC /* SignUpViewController.swift */,
+				5097C36623F30C8C0045E8BC /* LoginViewController.swift */,
+				5097C36823F30CA20045E8BC /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5097C36B23F30D2C0045E8BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5097C36C23F30D740045E8BC /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				507EE3E423F30A02007D343B /* ViewController.swift in Sources */,
+				5097C36D23F30D740045E8BC /* LoginView.swift in Sources */,
 				507EE3E023F30A02007D343B /* AppDelegate.swift in Sources */,
+				5097C36523F30C4F0045E8BC /* SignUpViewController.swift in Sources */,
+				5097C36723F30C8C0045E8BC /* LoginViewController.swift in Sources */,
 				507EE3E223F30A02007D343B /* SceneDelegate.swift in Sources */,
+				5097C36923F30CA20045E8BC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
