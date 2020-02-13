@@ -14,24 +14,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
+        self.loginView.bindings(vm: LoginViewModel())
+    }
+    
+    func setUp() {
+        super.viewDidLoad()
         self.view.addSubview(self.loginView)
+        self.loginView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.loginView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.loginView.leftAnchor.constraint(equalTo:self.view.leftAnchor),
             self.loginView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.loginView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.loginView.heightAnchor.constraint(equalTo: self.view.heightAnchor)
         ])
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
