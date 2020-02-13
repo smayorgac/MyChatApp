@@ -19,6 +19,9 @@
 		5097C36723F30C8C0045E8BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36623F30C8C0045E8BC /* LoginViewController.swift */; };
 		5097C36923F30CA20045E8BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36823F30CA20045E8BC /* HomeViewController.swift */; };
 		5097C36D23F30D740045E8BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36C23F30D740045E8BC /* LoginView.swift */; };
+		5097C37023F31EB40045E8BC /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C36F23F31EB40045E8BC /* MCButton.swift */; };
+		5097C37323F336930045E8BC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C37223F336930045E8BC /* Colors.swift */; };
+		5097C37523F341500045E8BC /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097C37423F341500045E8BC /* MCTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		5097C36623F30C8C0045E8BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5097C36823F30CA20045E8BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5097C36C23F30D740045E8BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5097C36F23F31EB40045E8BC /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
+		5097C37223F336930045E8BC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5097C37423F341500045E8BC /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,8 @@
 		507EE3DE23F30A02007D343B /* MyChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				5097C37123F3367F0045E8BC /* SharedUtilities */,
+				5097C36E23F31E8A0045E8BC /* Components */,
 				5097C36B23F30D2C0045E8BC /* Views */,
 				5097C36A23F30CA60045E8BC /* ViewControllers */,
 				507EE3DF23F30A02007D343B /* AppDelegate.swift */,
@@ -154,6 +162,23 @@
 				5097C36C23F30D740045E8BC /* LoginView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5097C36E23F31E8A0045E8BC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5097C36F23F31EB40045E8BC /* MCButton.swift */,
+				5097C37423F341500045E8BC /* MCTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5097C37123F3367F0045E8BC /* SharedUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				5097C37223F336930045E8BC /* Colors.swift */,
+			);
+			path = SharedUtilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,10 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				507EE3E423F30A02007D343B /* ViewController.swift in Sources */,
+				5097C37523F341500045E8BC /* MCTextField.swift in Sources */,
+				5097C37323F336930045E8BC /* Colors.swift in Sources */,
 				5097C36D23F30D740045E8BC /* LoginView.swift in Sources */,
 				507EE3E023F30A02007D343B /* AppDelegate.swift in Sources */,
 				5097C36523F30C4F0045E8BC /* SignUpViewController.swift in Sources */,
 				5097C36723F30C8C0045E8BC /* LoginViewController.swift in Sources */,
+				5097C37023F31EB40045E8BC /* MCButton.swift in Sources */,
 				507EE3E223F30A02007D343B /* SceneDelegate.swift in Sources */,
 				5097C36923F30CA20045E8BC /* HomeViewController.swift in Sources */,
 			);
