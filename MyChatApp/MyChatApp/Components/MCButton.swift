@@ -1,14 +1,10 @@
-//
-//  MCButton.swift
-//  MyChatApp
-//
-//  Created by Sebastian Mayorga on 2/11/20.
-//  Copyright © 2020 Sebastian Mayorga. All rights reserved.
-//
-
 import UIKit
+import RxCocoa
+import RxSwift
 
 class MCButton: UIButton{
+    let disposebag = DisposeBag()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setUp()
@@ -26,20 +22,14 @@ class MCButton: UIButton{
             self.widthAnchor.constraint(equalToConstant: 280)
         ])
         self.styleButton()
-
-    }
-    private func styleButton(){
         self.setShadow()
-        self.setTitleColor(.white, for: .normal)
-        
-        self.backgroundColor    = Colors.coolBlue
+    }
+    
+    private func styleButton(){
         self.titleLabel?.font   = UIFont(name:"AvenirNext-DemiBold", size: 18)
-        self.titleLabel?.text = "su mama"
-
         self.layer.cornerRadius = 25
         self.layer.borderWidth  = 3.0
         self.layer.borderColor  = UIColor.darkGray.cgColor
-        
     }
     
     private func setShadow() {
@@ -50,22 +40,34 @@ class MCButton: UIButton{
         self.clipsToBounds       = true
         self.layer.masksToBounds = false
     }
-    
-    func shakeAnimation(){
-        let shake = CABasicAnimation(keyPath: "position")
-        shake.duration     = 0.1
-        shake .repeatCount = 2
-        shake.autoreverses = true
+}
+extension MCButton {
+    func bindings(vm: MCButtonViewModel) {
+        vm.buttonText
+            .drive(self.rx.title(for: .normal))
+            .disposed(by: self.disposebag)
         
-        let fromPoint = CGPoint(x: self.center.x - 8, y: self.center.y)
-        let fromValue = NSValue(cgPoint: fromPoint)
+        vm.textColor
+            .drive(onNext: {
+                self.setTitleColor($0, for: .normal)
+            })
+            .disposed(by: self.disposebag)
         
-        let toPoint = CGPoint(x: self.center.x + 8, y: self.center.y)
-        let toValue = NSValue(cgPoint: toPoint)
+        vm.buttonColor
+            .drive(self.rx.backgroundColor)
+            .disposed(by: self.disposebag)
         
-        shake.fromValue = fromValue
-        shake.toValue = toValue
+        self.rx.tap
+            .asDriver()
+            .drive(onNext: {_ in  vm.buttonPressed.accept(()) })
+            .disposed(by: self.disposebag)
         
-        self.layer.add(shake, forKey: "position")
+        vm.buttonPressed
+            .withLatestFrom(vm.buttonState)
+            .filter{ $0 != .disable }
+            .map { _ in () }
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: { _ in vm.animation?.animate(view: self) })
+            .disposed(by: self.disposebag)
     }
 }

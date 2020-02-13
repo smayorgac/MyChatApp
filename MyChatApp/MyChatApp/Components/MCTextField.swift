@@ -1,12 +1,16 @@
 import UIKit
-
+import RxSwift
+import RxCocoa
 class MCTextField: UIView {
-    var textField: UITextField {
+    let disposebag = DisposeBag()
+    
+    var textField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "AAAAAA"
+        textField.font = UIFont(name:"AvenirNext-DemiBold", size: 18)
         return textField
-    }
-    var underLineView: UIView {
+    }()
+    
+    var underLineView: UIView = {
         let underLineView = UIView()
         underLineView.translatesAutoresizingMaskIntoConstraints = false
         underLineView.backgroundColor = .black
@@ -14,7 +18,8 @@ class MCTextField: UIView {
             underLineView.heightAnchor.constraint(equalToConstant: 1)
         ])
         return underLineView
-    }
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setUp()
@@ -27,6 +32,7 @@ class MCTextField: UIView {
     func setUp(){
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 4
         stackView.addArrangedSubview(self.textField)
         stackView.addArrangedSubview(self.underLineView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,8 +43,24 @@ class MCTextField: UIView {
             stackView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
         ])
-        
-        
     }
-    
+}
+extension MCTextField {
+    func bingings(vm: MCTexfieldViewModel) {
+        vm.placeHolder
+            .drive(self.textField.rx.placeHolderRx)
+            .disposed(by: self.disposebag)
+
+        vm.text
+            .drive(self.textField.rx.text)
+            .disposed(by: self.disposebag)
+        
+        vm.isPassword
+            .drive(self.textField.rx.isSecureTextEntry)
+            .disposed(by: self.disposebag)
+        
+        self.textField.rx.text.asDriver()
+            .drive(onNext: { vm.textRelay.accept($0) })
+            .disposed(by: self.disposebag)
+        }
 }
