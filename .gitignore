@@ -1,0 +1,103 @@
+
+# Project specific
+
+# Ignore local configuration. 
+# Allows developers to override build settings without polluting the repo.
+Configs/local.xcconfig
+Configs/local.json
+
+# Ignore code files generated during the build that shouldn't be modified.
+loblaws/Generated/APIEnvironment.*
+loblaws/Generated/TestingAPIEnvironment.*
+
+# binaries
+*.ipa
+*.apk
+*.app
+*.dSYM
+
+# Mac OS X
+.DS_Store
+__MACOSX
+
+# Jetbrains
+.idea
+
+# ruby/calabash/cucumber
+.bundle
+*.gem
+reports_per_device
+report
+screenshots
+*screenshot*.png
+vendor
+allure-report
+
+## Build generated
+products/*
+build/*
+*/build/*
+build/
+DerivedData
+LoblawsXCUITest/hoverfly_interface/middleware/lib/log/*
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+
+Pods/
+Podfile.swp
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/xcov_output
+
+.irb-history
+ipa
+features.zip
+/features/screenshots
+cli.sh
+.yardoc
+doc/
+
+.rubocop_report.txt
+bitrise.yml
+output/
+
+.scannerwork/
+
+LoblawsXCUITest/UITMConfig.swift
+env-vars.sh
